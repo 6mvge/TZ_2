@@ -2,14 +2,10 @@ package com.test;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-import static com.test.Calculator.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestFileGenerator {
+public class FileGenerator {
 
     public static void main(String[] args) {
         generateTestFile("test_numbers_size_100.txt", 100);

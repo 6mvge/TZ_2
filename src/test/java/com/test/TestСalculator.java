@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestСalculator {
 
-    private ArrayList<Long> numbers;
+    private static ArrayList<Long> numbers;
 
-    @BeforeEach
-    public void setUp() throws IOException {
+    @BeforeAll
+    public static void setUp() throws IOException {
         numbers = Calculator.readNumbersFromFile("test.txt");
-        System.out.println("файл считан");
+        System.out.println("Read file");
     }
 
     @Test
@@ -41,9 +41,9 @@ public class TestСalculator {
         assertEquals("410652290664", Calculator.getMult(numbers));
         System.out.println("testGetMult passed");
     }
+    @Test
     @Disabled
     @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
-    @Test
     public void timeoutTest() throws IOException {
         ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
         Calculator.getSum(bigSize);

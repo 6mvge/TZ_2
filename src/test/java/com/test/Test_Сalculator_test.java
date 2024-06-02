@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Test_Сalculator {
+class Test_Сalculator_test {
 
     private ArrayList<Long> numbers;
 

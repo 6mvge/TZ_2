@@ -8,13 +8,14 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestСalculatorTest {
+public class TestСalculator {
 
     private ArrayList<Long> numbers;
 
     @BeforeEach
     public void setUp() throws IOException {
         numbers = Calculator.readNumbersFromFile("test.txt");
+        System.out.println("файл считан");
     }
 
     @Test

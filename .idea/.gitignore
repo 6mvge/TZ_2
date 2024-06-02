@@ -8,4 +8,17 @@
 /target
 /.idea/
 /dataSources.local.xml
+
 .DS_Store
+.DS_Store?
+# IntelliJ IDEA
+.idea/
+*.iml
+
+.gradle/
+build/
+*.log
+*.class
+*.jar
+*.war
+*.ear

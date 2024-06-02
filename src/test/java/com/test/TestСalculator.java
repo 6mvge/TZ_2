@@ -58,6 +58,4 @@ public class TestСalculator {
         });
         System.out.println("timeoutTest passed");
     }
-
-
 }

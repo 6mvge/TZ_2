@@ -27,3 +27,21 @@ jobs:
       - name: Run tests
         run: mvn test
         continue-on-error: true
+
+      - name: Success
+        if: success()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${TELEGRAM_CHAT_ID} -d text="Все тесты пройдены успешно"
+
+      - name: Check result
+          id: parse_results
+          run: |
+            failed_tests=$(grep -oP '(?<=Tests run: \d+, Failures: \d+, Errors: \d+, Skipped: \d+\s+Time elapsed: .+ <<< FAILURE!\s+- in .+\s+).+' results.log | tr '\n' ', ')
+            echo "::set-output name=failed_tests::$failed_tests"
+            - name: Notify Telegram
+              if: failure()
+              run: |
+                curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} -d text="Tests failed in repository ${{ github.repository }}. Failed tests: ${{ steps.parse_results.outputs.failed_tests }}. Check details at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

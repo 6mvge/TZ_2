@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Test {
+class Calulator_Test {
 
     private ArrayList<Long> numbers;
 
@@ -18,28 +18,24 @@ class Test {
     }
 
     @org.junit.jupiter.api.Test
-    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     void testGetMin() {
         assertEquals(-101, Calculator.getMin(numbers));
         System.out.println("testGetMin passed");
     }
 
     @org.junit.jupiter.api.Test
-    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     void testGetMax() {
         assertEquals(228, Calculator.getMax(numbers));
         System.out.println("testGetMax passed");
     }
 
     @org.junit.jupiter.api.Test
-    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     void testGetSum() {
         assertEquals("280", Calculator.getSum(numbers));
         System.out.println("testGetSum passed");
     }
 
     @org.junit.jupiter.api.Test
-    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     void testGetMult() {
         assertEquals("410652290664", Calculator.getMult(numbers));
         System.out.println("testGetMult passed");

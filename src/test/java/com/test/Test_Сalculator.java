@@ -8,17 +8,17 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Calulator_Test {
+class Test_Сalculator {
 
     private ArrayList<Long> numbers;
-
     @BeforeEach
-    void setUp() throws IOException {
-        numbers =Calculator.readNumbersFromFile("test.txt");
-    }
 
+    void setUp() throws IOException {
+        numbers = Calculator.readNumbersFromFile("test.txt");
+
+    }
     @Test
-    void testGetMin() {
+    void testGetMin() throws IOException {
         assertEquals(-101, Calculator.getMin(numbers));
         System.out.println("testGetMin passed");
     }
@@ -30,7 +30,7 @@ class Calulator_Test {
     }
 
     @Test
-    void testGetSum() {
+    void testGetSum() throws IOException {
         assertEquals("280", Calculator.getSum(numbers));
         System.out.println("testGetSum passed");
     }
@@ -41,6 +41,13 @@ class Calulator_Test {
         System.out.println("testGetMult passed");
     }
 
+    @Disabled
+    @Test
+    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
+    void timeoutTest() throws IOException {
+        ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
+        Calculator.getSum(bigSize);
+    }
 
 
 }

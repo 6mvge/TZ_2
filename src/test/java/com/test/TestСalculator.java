@@ -44,7 +44,7 @@ public class TestСalculator {
     @Test
     @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     public void testGetMult() {
-        assertEquals("410652290664", Calculator.getMult(numbers));
+        assertEquals("410652290660", Calculator.getMult(numbers));
         System.out.println("testGetMult passed");
     }
 

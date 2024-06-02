@@ -6,19 +6,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Test_Сalculator {
 
     private ArrayList<Long> numbers;
-    @BeforeEach
 
+    @BeforeEach
     void setUp() throws IOException {
         numbers = Calculator.readNumbersFromFile("test.txt");
 
     }
     @Test
-    void testGetMin() throws IOException {
+    void testGetMin() {
         assertEquals(-101, Calculator.getMin(numbers));
         System.out.println("testGetMin passed");
     }
@@ -30,7 +30,7 @@ class Test_Сalculator {
     }
 
     @Test
-    void testGetSum() throws IOException {
+    void testGetSum() {
         assertEquals("280", Calculator.getSum(numbers));
         System.out.println("testGetSum passed");
     }
@@ -42,8 +42,8 @@ class Test_Сalculator {
     }
 
     @Disabled
-    @Test
     @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
+    @Test
     void timeoutTest() throws IOException {
         ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
         Calculator.getSum(bigSize);

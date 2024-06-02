@@ -7,6 +7,10 @@
     <groupId>org.example</groupId>
     <artifactId>tz2</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>untitled</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>

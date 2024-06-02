@@ -49,7 +49,6 @@ public class TestСalculator {
     }
 
     @Disabled
-    @Test
     public void testTimeOut() throws IOException {
         ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
         Assertions.assertTimeout(Duration.ofMillis(200), () -> {

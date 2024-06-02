@@ -10,9 +10,9 @@ public class FileGenerator {
     public static void main(String[] args) {
         generateTestFile("test_numbers_size_100.txt", 100);
         generateTestFile("test_numbers_size_1000.txt", 1000);
-        generateTestFile("test_numbers_size_10000.txt", 100000);
-        generateTestFile("test_numbers_size_100000.txt", 1000000);
-        generateTestFile("test_numbers_size_1000000.txt", 10000000);
+        generateTestFile("test_numbers_size_10000.txt", 10000);
+        generateTestFile("test_numbers_size_100000.txt", 100000);
+        generateTestFile("test_numbers_size_1000000.txt", 1000000);
     }
 
     public static void generateTestFile(String filename, int size) {

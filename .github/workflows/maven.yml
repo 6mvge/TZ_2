@@ -39,7 +39,7 @@ jobs:
       - name: Parse Test Results
         id: parse_results
         run: |
-          failed_tests=$(grep -oP '(?<=Tests run: \d+, Failures: \d+, Errors: \d+, Skipped: \d+\s+Time elapsed: .+ <<< FAILURE!\s+- in .+\s+).+' results.log | tr '\n' ', ')
+          failed_tests=$(grep -Pzo "(?s)Tests run:.*?<<< FAILURE!.*?(?=\n\n)" results.log | grep -oP "(?<=\n\s).*(?=\s+<<< FAILURE!)" | tr '\n' ', ')
           echo "::set-output name=failed_tests::$failed_tests"
 
       - name: Fail

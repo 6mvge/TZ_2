@@ -47,9 +47,8 @@ public class TestСalculator {
         assertEquals("410652290664", Calculator.getMult(numbers));
         System.out.println("testGetMult passed");
     }
-
-    @Disabled
     @Test
+    @Disabled
     public void testTimeOut() throws IOException {
         ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
         Assertions.assertTimeout(Duration.ofMillis(200), () -> {

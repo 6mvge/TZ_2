@@ -50,7 +50,7 @@ public class TestСalculator {
 
     @Test
     public void testTimeOut() throws IOException {
-        ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");
+        ArrayList<Long> bigSize = Calculator.readNumbersFromFile("test_numbers_size_1000000.txt");
         Assertions.assertThrows(AssertionError.class, () -> {
             Assertions.assertTimeout(Duration.ofMillis(200), () -> {
                 Calculator.getSum(bigSize);

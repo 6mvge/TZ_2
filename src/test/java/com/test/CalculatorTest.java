@@ -14,9 +14,7 @@ class CalculatorTest {
 
 
 
-    @Disabled
     @Test
-    @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)
     void timeoutTest() throws IOException {
         System.out.println("test");
         ArrayList<Long> numbers = Calculator.readNumbersFromFile("test_numbers_size_10000000.txt");

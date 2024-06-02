@@ -41,20 +41,6 @@ class CalculatorTest {
         assertEquals("410652290664", Calculator.getMult(numbers));
     }
 
-
-
-    void testPerformanceSum() {
-        ArrayList<Long> bigSize = new ArrayList<>();
-        long n = 1000000;
-        for (long i = 1; i <= n; i++) {
-            bigSize.add(i);
-        }
-        float start = System.nanoTime() / 1000 ;
-        Calculator.getSum(bigSize);
-        float end = System.nanoTime() / 1000 ;
-        System.out.println("Size: " + n+ "; SumTime: " + (end - start)/1000 + " ms");
-    }
-
     @Disabled
     @Test
     @Timeout(value = 200, unit = TimeUnit.MILLISECONDS)

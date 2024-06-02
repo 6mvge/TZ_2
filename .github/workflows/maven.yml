@@ -43,4 +43,4 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           FAILED_TESTS=$(mvn surefire-report:report-only -DfailIfNoTests=false | grep "<failure" | sed -e 's/<failure.*message="\([^"]*\).*/\1/')
-          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${TELEGRAM_CHAT_ID} -d text="Тесты провалены: ${FAILED_TESTS}. Check details at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${TELEGRAM_CHAT_ID} -d text="Тесты провалены: ${FAILED_TESTS}"

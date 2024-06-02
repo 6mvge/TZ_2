@@ -17,25 +17,25 @@ class Calulator_Test {
         numbers =Calculator.readNumbersFromFile("test.txt");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testGetMin() {
         assertEquals(-101, Calculator.getMin(numbers));
         System.out.println("testGetMin passed");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testGetMax() {
         assertEquals(228, Calculator.getMax(numbers));
         System.out.println("testGetMax passed");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testGetSum() {
         assertEquals("280", Calculator.getSum(numbers));
         System.out.println("testGetSum passed");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testGetMult() {
         assertEquals("410652290664", Calculator.getMult(numbers));
         System.out.println("testGetMult passed");
